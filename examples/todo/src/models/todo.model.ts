@@ -17,11 +17,22 @@ export class Todo extends Entity {
   @property({
     type: 'string',
     required: true,
+    // Not work for index creation
+    mysql: {
+      index: {
+        kind: 'FULLTEXT',
+      },
+    },
   })
   title: string;
 
   @property({
     type: 'string',
+    // work for index creation. but it is diffrent by README
+    index: {
+      kind: 'FULLTEXT',
+      // also it can `unique: true` in here, not mysql.index.unique...
+    },
   })
   desc?: string;
 
