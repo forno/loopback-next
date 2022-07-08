@@ -17,6 +17,11 @@ export class Todo extends Entity {
   @property({
     type: 'string',
     required: true,
+    mysql: {
+      index: {
+        kind: 'FULLTEXT',
+      },
+    },
   })
   title: string;
 
