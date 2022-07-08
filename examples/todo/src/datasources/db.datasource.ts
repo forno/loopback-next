@@ -8,9 +8,14 @@ import {juggler} from '@loopback/repository';
 
 const config = {
   name: 'db',
-  connector: 'memory',
-  localStorage: '',
-  file: './data/db.json',
+  connector: 'mysql',
+  host: 'db',
+  user: 'loopback',
+  password: 'loopback',
+  database: 'loopback',
+  collation: 'utf8mb4_general_ci'
+  timeZone: 'Azia/Tokyo',
+  legacyUtcDateProcessing: false,
 };
 
 // Observe application's life cycle to disconnect the datasource when
